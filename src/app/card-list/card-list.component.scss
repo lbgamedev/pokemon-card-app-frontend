@@ -1,0 +1,196 @@
+// Card list container styles
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); // Responsive columns
+    gap: 20px;  // Space between cards
+    padding: 20px;  // Padding around the card grid
+    justify-items: center;
+  }
+  
+  // Individual card styles
+  .card {
+    position: relative;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;  // Fixed card width for uniformity
+    // border: 3px solid transparent;
+  
+    &:hover {
+      transform: translateY(-5px);  // Lift card on hover
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  // Deeper shadow on hover
+
+      .card-image-overlay {
+        opacity: 0;
+      }
+
+      .add-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+    // Card image styles
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;  // Ensure images are nicely scaled
+    }
+
+    .card-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.5);  // Semi-transparent gray
+        transition: opacity 0.3s ease;
+      }
+
+      // Overlay at the bottom for card details (like in the image)
+    .card-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);  // Semi-transparent dark background
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+        // Circle checkmark overlay
+    .checkmark-overlay {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8); // Semi-transparent white background
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);  // Optional shadow for the circle
+    }
+
+    // Checkmark icon inside the circle
+    .checkmark-icon {
+        color: green;  // Green color for the checkmark
+        font-size: 24px;  // Adjust the size of the checkmark
+    }
+
+    // Circle checkmark overlay
+    .add-overlay {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8); // Semi-transparent white background
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);  // Optional shadow for the circle
+
+        // Make it hidden by default
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    // Checkmark icon inside the circle
+    .add-icon {
+        color: red;  // Green color for the checkmark
+        font-size: 24px;  // Adjust the size of the checkmark
+    }
+  
+    // // Card content styles
+    // .card-content {
+    //   padding: 15px;
+    //   text-align: center;
+  
+    //   h2 {
+    //     font-size: 18px;
+    //     color: #343a40;
+    //     margin-bottom: 10px;
+    //   }
+  
+    //   p {
+    //     font-size: 16px;
+    //     color: #6c757d;
+    //   }
+  
+    //   button {
+    //     background-color: #007bff;
+    //     color: white;
+    //     border: none;
+    //     border-radius: 4px;
+    //     padding: 8px 12px;
+    //     cursor: pointer;
+    //     font-size: 14px;
+  
+    //     &:hover {
+    //       background-color: #0056b3;  // Darken on hover
+    //     }
+    //   }
+    // }
+  }
+
+  // Apply green border if the user owns the card
+.owned {
+    border-color: green;
+}
+
+// Apply red border if the user doesn't own the card
+.not-owned {
+    border-color: red;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+  
+    input[type="text"] {
+      width: 60%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  
+    label {
+      margin-left: 20px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+  
+      input {
+        margin-right: 5px;
+      }
+    }
+  }
+  
+  // Adjustments to card layout remain the same as previously defined.
+  
+  
+  // Mobile adjustments
+  @media (max-width: 600px) {
+    .card {
+      width: 100%;  // Make cards full-width on small screens
+    }
+  
+    .card-list {
+      grid-template-columns: 1fr;  // Single-column layout on small screens
+    }
+  }
+  

@@ -1,0 +1,121 @@
+// Card details container styles
+.card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  
+    // Set a maximum width for better readability
+    max-width: 800px;
+    margin: 0 auto;
+  
+    // Media queries for responsiveness
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+  
+  // Card image section
+  .card-image {
+    width: 100%;
+    max-width: 400px;  // Limit the image size
+    margin-bottom: 20px;
+  
+    @media (min-width: 768px) {
+      margin-right: 40px;  // Add spacing between image and details on larger screens
+      margin-bottom: 0;
+    }
+  
+    img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
+    }
+  }
+  
+  // Card information section
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #343a40;
+    }
+  
+    .card-price {
+      font-size: 22px;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 16px;
+      color: #6c757d;
+      margin-bottom: 10px;
+    }
+  
+    // Ownership section for setting if the user owns the card and how many copies
+    .ownership {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+  
+      label {
+        font-size: 16px;
+        color: #495057;
+        margin-bottom: 5px;
+      }
+  
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+  
+      .copies-input {
+        display: flex;
+        align-items: center;
+  
+        input[type="number"] {
+          width: 60px;
+          padding: 5px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  
+  // Buttons for actions (like 'Add to Collection' or 'Back')
+  .actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+  
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+  
+      &:hover {
+        background-color: #0056b3;  // Darken on hover
+      }
+    }
+  }
+  
+  // Mobile adjustments
+  @media (max-width: 767px) {
+    .card-info {
+      text-align: center;  // Center text on smaller screens
+    }
+  
+    .actions {
+      justify-content: center;  // Center buttons on smaller screens
+    }
+  }
+  

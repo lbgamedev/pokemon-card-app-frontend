@@ -1,0 +1,29 @@
+  <div class="card-details">
+    <div class="card-image">
+      <img [src]="card?.images.large" alt="{{ card?.name }}">
+    </div>
+    <div class="card-info">
+      <h1>{{ card?.name }}</h1>
+      <p class="card-price">Marktpreis: {{ card?.cardmarket.prices?.averageSellPrice | currency }}</p>
+      <p>Type: {{ card?.types.join(', ') }}</p>
+      <p>Rarity: {{ card?.rarity }}</p>
+      <p>Set: {{ card?.set.name }}</p>
+      <p>{{ card?.flavorText }}</p>
+  
+      <div class="ownership">
+        <label>
+          <input type="checkbox" [(ngModel)]="ownership.owns"> Ich besitze diese Karte
+        </label>
+        <div class="copies-input">
+          <label for="copies">Anzahl Kopien:</label>
+          <input type="number" id="copies" [(ngModel)]="ownership.copies">
+        </div>
+      </div>
+  
+      <div class="actions">
+        <button (click)="updateOwnership()">Änderung speichern</button>
+        <button (click)="goBack()">Zurück zur Liste</button>
+      </div>
+    </div>
+  </div>
+  

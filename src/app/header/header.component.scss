@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8; // Change this to your desired background color
+    border-bottom: 2px solid #e0e0e0; // Optional: Add a bottom border for separation
+  }
+  
+  .logo {
+    height: 50px; // Adjust size as necessary
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #333; // Change this to your desired text color
+    margin: 0; // Remove default margin
+  }
+  

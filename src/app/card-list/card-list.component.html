@@ -1,0 +1,42 @@
+<div class="filter-bar">
+  <!-- Search Bar -->
+  <input type="text" placeholder="Kartne nach Name suchen" [(ngModel)]="searchTerm" />
+
+  <!-- Filter by Ownership -->
+  <label>
+    <input type="radio" [(ngModel)]="filterOwnership" value="all" /> Alle
+  </label>
+  <label>
+    <input type="radio" [(ngModel)]="filterOwnership" value="owned" /> In Besitz
+  </label>
+  <label>
+    <input type="radio" [(ngModel)]="filterOwnership" value="not-owned" /> Nicht in Besitz
+  </label>
+</div>
+
+<div class="card-list">
+  <div class="card" *ngFor="let card of filteredCards()">
+    <img [src]="card.images.small" alt="{{ card.name }}" (click)="openCardDetails(card)">
+    <div *ngIf="!card.owns" class="card-image-overlay"></div>
+    <div class="card-overlay">#{{ card.number }} - {{ card.name }}</div>
+    <!-- Checkmark overlay -->
+    <div *ngIf="card.owns" class="checkmark-overlay" (click)="toggleCardOwnership(card, false)">
+      <i class="checkmark-icon">✔</i>  <!-- Checkmark icon -->
+    </div>
+    <div *ngIf="!card.owns" class="add-overlay" (click)="toggleCardOwnership(card, true)">
+      <i class="add-icon">✔</i>  <!-- Checkmark icon -->
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="card-list">
+  <div class="card" *ngFor="let card of filteredCards()" [ngClass]="{ 'owned': card.owns, 'not-owned': !card.owns }">
+    <img [src]="card.images.small" alt="{{ card.name }}">
+    <div class="card-content">
+      <h2>{{ card.name }}</h2>
+      <p>Marktpreis: {{ card.cardmarket.prices?.averageSellPrice | currency }}</p>
+      <button (click)="openCardDetails(card)">Details anzeigen</button>
+    </div>
+  </div>
+</div> -->

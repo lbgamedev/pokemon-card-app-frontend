@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-  private apiUrl = 'http://localhost:3005/api/cards'; // Your backend URL
+  private apiUrl = `${environment.apiUrl}/cards`; // Your backend URL
   // private apiUrl = 'https://pokedox.ch/api/api/cards'; // Your backend URL
 
   constructor(private http: HttpClient) {}

@@ -82,4 +82,10 @@
     font-size: 14px;
     margin-top: 1rem;
   }
-  
+
+  // Mobile adjustments
+  @media (max-width: 600px) {
+    .auth-card{
+      margin-top: -100px;
+    }
+  }

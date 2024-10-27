@@ -187,8 +187,28 @@
   
   // Mobile adjustments
   @media (max-width: 600px) {
+    .filter-bar {
+        display: block;
+
+        input{
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+        .radio-filter{
+            width: 4% !important;
+            margin-right: 10px !important;
+        }
+
+        label{
+            margin-left: 0px;
+        }
+
+        .search-bar{
+            margin-bottom: 7px;
+        }
+    }
     .card {
-      width: 100%;  // Make cards full-width on small screens
+      width: fit-content;  // Make cards full-width on small screens
     }
   
     .card-list {

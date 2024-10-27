@@ -1,16 +1,16 @@
 <div class="filter-bar">
   <!-- Search Bar -->
-  <input type="text" placeholder="Kartne nach Name suchen" [(ngModel)]="searchTerm" />
+  <input type="text" placeholder="Kartne nach Name suchen" class="search-bar" [(ngModel)]="searchTerm" />
 
   <!-- Filter by Ownership -->
   <label>
-    <input type="radio" [(ngModel)]="filterOwnership" value="all" /> Alle
+    <input type="radio" [(ngModel)]="filterOwnership" class="radio-filter" value="all" /> Alle
   </label>
   <label>
-    <input type="radio" [(ngModel)]="filterOwnership" value="owned" /> In Besitz
+    <input type="radio" [(ngModel)]="filterOwnership" class="radio-filter" value="owned" /> In Besitz
   </label>
   <label>
-    <input type="radio" [(ngModel)]="filterOwnership" value="not-owned" /> Nicht in Besitz
+    <input type="radio" [(ngModel)]="filterOwnership" class="radio-filter" value="not-owned" /> Nicht in Besitz
   </label>
 </div>
 

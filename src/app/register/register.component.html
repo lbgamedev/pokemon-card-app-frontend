@@ -1,0 +1,45 @@
+<div class="auth-container">
+    <div class="auth-card">
+      <h2>Register</h2>
+      <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+        <!-- Username Field -->
+        <div class="form-group">
+          <label for="username">Benutzername</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+            [(ngModel)]="username"
+            required
+          />
+        </div>
+  
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            [(ngModel)]="password"
+            required
+          />
+        </div>
+  
+        <!-- Register Button -->
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+  
+        <!-- Link to Login Page -->
+        <p class="switch-auth">
+          Du hast bereits einen Account?
+          <a routerLink="/login">Hier zum Login</a>
+        </p>
+  
+        <!-- Error Message Display -->
+        <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+      </form>
+    </div>
+  </div>
+  

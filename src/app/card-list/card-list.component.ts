@@ -27,6 +27,7 @@ export class CardListComponent implements OnInit {
   }
 
   openCardDetails(card: any): void {
+    console.log('test')
     this.router.navigate(['/cards', card.id]);
   }
 

@@ -17,7 +17,7 @@
 <div class="card-list">
   <div class="card" *ngFor="let card of filteredCards()">
     <img [src]="card.images.small" alt="{{ card.name }}" (click)="openCardDetails(card)">
-    <div *ngIf="!card.owns" class="card-image-overlay"></div>
+    <div *ngIf="!card.owns" class="card-image-overlay" (click)="openCardDetails(card)"></div>
     <div class="card-overlay">#{{ card.number }} - {{ card.name }}</div>
     <!-- Checkmark overlay -->
     <div *ngIf="card.owns" class="checkmark-overlay" (click)="toggleCardOwnership(card, false)">

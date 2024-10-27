@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PokemonService {
-  private apiUrl = 'http://localhost:3000/api/cards'; // Your backend URL
+  private apiUrl = 'http://localhost:3005/api/cards'; // Your backend URL
+  // private apiUrl = 'https://pokedox.ch/api/api/cards'; // Your backend URL
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +18,7 @@ export class PokemonService {
 
   // Fetch ownership information for a specific card
   getCardOwnership(cardId: string, userId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${cardId}/ownership?userId=${userId}`);
+    return this.http.get<any>(`${this.apiUrl}/${cardId}/ownership`);
   }
 
   getCardDetail(cardId: string): Observable<any> {
@@ -27,6 +28,6 @@ export class PokemonService {
   // Update ownership information for a specific card
   updateCardOwnership(cardId: string, userId: number, owns: boolean, copies: number): Observable<any> {
     console.log(cardId)
-    return this.http.post(`${this.apiUrl}/${cardId}/ownership`, { userId, owns, copies });
+    return this.http.post(`${this.apiUrl}/${cardId}/ownership`, { owns, copies });
   }
 }
